@@ -90,11 +90,11 @@ def inference_app(image, background_enhance, face_upsample, upscale, codeformer_
     only_center_face = False
     draw_box = False
     detection_model = "retinaface_resnet50"  # Changed detection model to YOLOv5n
-    print("Inp:", type(image), background_enhance, face_upsample, upscale, codeformer_fidelity)
+    # print("Inp:", type(image), background_enhance, face_upsample, upscale, codeformer_fidelity)
     
     original_shape = image.shape  # Store original dimensions
     img = image  # Directly use the input image array
-    print("\timage size:", img.shape)
+    # print("\timage size:", img.shape)
 
     upscale = int(upscale)  # convert type to int
     if upscale > 4:  # avoid memory exceeded due to too large upscale
@@ -135,7 +135,7 @@ def inference_app(image, background_enhance, face_upsample, upscale, codeformer_
 
         # Get confidence scores and sort the faces based on scores (in descending order)
         face_detections = face_helper.det_faces  # Assuming face_helper stores detected face scores
-        print("Face Detections:", face_detections)
+        # print("Face Detections:", face_detections)
         
         if len(face_detections) > 2:
             # Sort by confidence score only if more than 2 faces are detected
