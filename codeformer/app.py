@@ -193,6 +193,6 @@ def inference_app(image, background_enhance, face_upsample, upscale, codeformer_
             restored_img = face_helper.paste_faces_to_input_image(upsample_img=bg_img, draw_box=draw_box)
 
     # Resize restored image to original dimensions
-    restored_img = cv2.resize(restored_img, (original_shape[1], original_shape[0]), interpolation=cv2.INTER_LINEAR)
+    # restored_img = cv2.resize(restored_img, (original_shape[1], original_shape[0]), interpolation=cv2.INTER_LINEAR)
     
     return restored_img
