@@ -131,7 +131,7 @@ def inference_app(image, background_enhance, face_upsample, upscale, codeformer_
         num_det_faces = face_helper.get_face_landmarks_5(
             only_center_face=only_center_face, resize=640, eye_dist_threshold=5
         )
-        print(f"Detected {num_det_faces} faces")  # Print number of detected faces
+        # print(f"Detected {num_det_faces} faces")  # Print number of detected faces
 
         # Get confidence scores and sort the faces based on scores (in descending order)
         face_detections = face_helper.det_faces  # Assuming face_helper stores detected face scores
