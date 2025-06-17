@@ -20,19 +20,19 @@ pretrain_model_url = {
 }
 
 # download weights
-if not os.path.exists("/CodeFormer/weights/CodeFormer/codeformer.pth"):
+if not os.path.exists("CodeFormer/weights/CodeFormer/codeformer.pth"):
     load_file_from_url(
         url=pretrain_model_url["codeformer"], model_dir="CodeFormer/weights/CodeFormer", progress=True, file_name=None
     )
-if not os.path.exists("/CodeFormer/weights/facelib/detection_Resnet50_Final.pth"):
+if not os.path.exists("CodeFormer/weights/facelib/detection_Resnet50_Final.pth"):
     load_file_from_url(
         url=pretrain_model_url["detection"], model_dir="CodeFormer/weights/facelib", progress=True, file_name=None
     )
-if not os.path.exists("/CodeFormer/weights/facelib/parsing_parsenet.pth"):
+if not os.path.exists("CodeFormer/weights/facelib/parsing_parsenet.pth"):
     load_file_from_url(
         url=pretrain_model_url["parsing"], model_dir="CodeFormer/weights/facelib", progress=True, file_name=None
     )
-if not os.path.exists("/CodeFormer/weights/realesrgan/RealESRGAN_x2plus.pth"):
+if not os.path.exists("CodeFormer/weights/realesrgan/RealESRGAN_x2plus.pth"):
     load_file_from_url(
         url=pretrain_model_url["realesrgan"], model_dir="CodeFormer/weights/realesrgan", progress=True, file_name=None
     )
