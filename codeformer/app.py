@@ -46,6 +46,8 @@ def imread(img_path):
 
 # set enhancer with RealESRGAN
 def set_realesrgan():
+    print("printing directories)
+    print(os.listdir(os.getcwd()))
     half = True if torch.cuda.is_available() else False
     model = RRDBNet(
         num_in_ch=3,
@@ -57,7 +59,7 @@ def set_realesrgan():
     )
     upsampler = RealESRGANer(
         scale=2,
-        model_path="/CodeFormer/weights/realesrgan/RealESRGAN_x2plus.pth",
+        model_path="CodeFormer/weights/realesrgan/RealESRGAN_x2plus.pth",
         model=model,
         tile=400,
         tile_pad=40,
@@ -76,7 +78,7 @@ codeformer_net = ARCH_REGISTRY.get("CodeFormer")(
     n_layers=9,
     connect_list=["32", "64", "128", "256"],
 ).to(device)
-ckpt_path = "/CodeFormer/weights/CodeFormer/codeformer.pth"
+ckpt_path = "CodeFormer/weights/CodeFormer/codeformer.pth"
 checkpoint = torch.load(ckpt_path)["params_ema"]
 codeformer_net.load_state_dict(checkpoint)
 codeformer_net.eval()
