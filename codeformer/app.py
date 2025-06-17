@@ -46,7 +46,7 @@ def imread(img_path):
 
 # set enhancer with RealESRGAN
 def set_realesrgan():
-    print("Printing all directories")
+    print("Printing all directories in codeformer package")
     # Get the current directory
     for root, dirs, files in os.walk("CodeFormer"):
         for name in dirs + files:
