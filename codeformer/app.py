@@ -46,8 +46,11 @@ def imread(img_path):
 
 # set enhancer with RealESRGAN
 def set_realesrgan():
-    print("printing directories)
-    print(os.listdir(os.getcwd()))
+    print("Printing all directories")
+    # Get the current directory
+    for root, dirs, files in os.walk("CodeFormer"):
+        for name in dirs + files:
+            print(os.path.join(root, name))
     half = True if torch.cuda.is_available() else False
     model = RRDBNet(
         num_in_ch=3,
